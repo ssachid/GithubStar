@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectLanguage from './SelectLanguage';
+import api from './utils/api';
 
 class Popular extends React.Component {
   constructor(props) {
