@@ -50,3 +50,20 @@ li {
   width: 150px;
   border-radius: 50%;
 }
+
+a {
+  text-decoration: none;
+  color: #d0021b;
+}
+
+.nav {
+  display: flex;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.nav li {
+  margin-right: 15px;
+}
