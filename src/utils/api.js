@@ -23,3 +23,8 @@ function getStarCount(repos) {
 function calculateScore({followers},repos) {
   return (followers * 3) + getStarCount(repos);
 }
+
+function handleError(error) {
+  console.log(error);
+  return null;
+}
