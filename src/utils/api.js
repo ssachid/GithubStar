@@ -39,3 +39,9 @@ function getUserData(player) {
 function sortPlayers(players) {
   return players.sort( (a,b) => b.score - a.score )
 }
+
+export function battle(players) {
+  return axios.all(players.map(getUserData))
+    .then(sortPlayers)
+    .catch(handleError)
+}
