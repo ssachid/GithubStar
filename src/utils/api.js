@@ -28,3 +28,10 @@ function handleError(error) {
   console.log(error);
   return null;
 }
+
+function getUserData(player) {
+  return axios.all([getProfile(player), getRepos(player)])
+    .then( ([profile, repos]) => (
+      { profile, score: calculateScore(profile, repos)})
+    )
+}
