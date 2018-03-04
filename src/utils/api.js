@@ -15,3 +15,7 @@ export function getProfile(user) {
 export function getRepos(username) {
   return axios.get(`https://api.github.com/users/${username}/repos`)
 }
+
+export function getStarCount(repos) {
+  return repos.data.reduce((count, {stargazers_count}) => count + startgazers_count, 0);
+}
