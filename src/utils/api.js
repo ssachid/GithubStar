@@ -6,3 +6,9 @@ export function fetchPopularRepos(language) {
   return axios.get(encodedURI)
     .then(({data}) => data.items)
 }
+
+export function getProfile(user) {
+  return axios.get(`http://api.github.com/users${username}${params}`)
+    .then(({data}) => data)
+}
+
