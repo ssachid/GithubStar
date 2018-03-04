@@ -1,6 +1,7 @@
 import React from 'react';
 import queryString from 'query-string';
 import { battle } from './utils/api';
+import PlayerPreview from './PlayerPreview';
 
 class Results extends React.Component {
   constructor(props) {
@@ -32,14 +33,34 @@ class Results extends React.Component {
         })
       })
   }
+
   render() {
     const { error, winner, loser, loading } = this.state;
     if ( loading === true ) {
       return <p> Loading </p>
     }
 
+    if ( error ) {
+      return (
+        <div>
+          <p> { error } </p>
+          <Link to="/battle">Reset</Link>
+        </div>
+      )
+    }
+
     return (
-      <div>Results</div>
+      <div class="row">
+        <Player
+          label="winner"
+          score={winner.score}
+          profile={winner.profile} />
+
+        <Player
+          label="loser"
+          score={loser.score}
+          profile={loser.profile} />
+      </div>
     )
   }
 }
