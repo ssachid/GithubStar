@@ -98,4 +98,9 @@ a {
   transform: translateY(1px);
 }
 
+.row {
+  display: flex; /* display all child components horizontally */
+  justify-content: space-around; /* and space them around */
+}
+
 
