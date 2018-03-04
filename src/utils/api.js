@@ -35,3 +35,7 @@ function getUserData(player) {
       { profile, score: calculateScore(profile, repos)})
     )
 }
+
+function sortPlayers(players) {
+  return players.sort( (a,b) => b.score - a.score )
+}
