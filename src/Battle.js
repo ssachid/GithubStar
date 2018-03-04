@@ -1,4 +1,5 @@
 import React from 'react';
+import PlayerInput from './PlayerInput';
 
 class Battle extends React.Component {
   constructor(props) {
