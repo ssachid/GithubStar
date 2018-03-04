@@ -16,6 +16,10 @@ export function getRepos(username) {
   return axios.get(`https://api.github.com/users/${username}/repos`)
 }
 
-export function getStarCount(repos) {
+function getStarCount(repos) {
   return repos.data.reduce((count, {stargazers_count}) => count + startgazers_count, 0);
+}
+
+function calculateScore({followers},repos) {
+  return (followers * 3) + getStarCount(repos);
 }
