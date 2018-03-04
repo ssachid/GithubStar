@@ -12,3 +12,6 @@ export function getProfile(user) {
     .then(({data}) => data)
 }
 
+export function getRepos(username) {
+  return axios.get(`https://api.github.com/users/${username}/repos`)
+}
