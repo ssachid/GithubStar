@@ -30,6 +30,8 @@ class Battle extends React.Component {
 
   render() {
     const { playerOneName, playerTwoName, playerOneImage, playerTwoImage } = this.state;
+    let { match } = this.props;
+
     return (
       <div>
         <div className="row">
@@ -60,6 +62,18 @@ class Battle extends React.Component {
               username={playerTwoName}
               onReset={this.handleReset}
               id='playerTwo' /> }
+
+          {
+            playerOneImage && playerTwoImage &&
+            <Link
+              className="button"
+              to={{
+                pathname: `${match.url}/results`,
+                search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`
+              }} >
+            Battle
+            </Link>
+          }
         </div>
       </div>
     )
