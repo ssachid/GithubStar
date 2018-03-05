@@ -37,7 +37,7 @@ class Results extends React.Component {
   render() {
     const { error, winner, loser, loading } = this.state;
     if ( loading === true ) {
-      return <p> Loading </p>
+      return <Loading />
     }
 
     if ( error ) {
