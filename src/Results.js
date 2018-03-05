@@ -2,6 +2,9 @@ import React from 'react';
 import queryString from 'query-string';
 import { battle } from './utils/api';
 import PlayerPreview from './PlayerPreview';
+import Loading from './Loading';
+import { Link } from 'react-router-dom';
+import Player from './Player';
 
 class Results extends React.Component {
   constructor(props) {
@@ -15,12 +18,13 @@ class Results extends React.Component {
   }
 
   componentDidMount() {
-    const [playerOneName, playerTwoName] = queryString.parse(this.props.location.search);
+    console.log(queryString.parse(this.props.location.search))
+    const {playerOneName, playerTwoName} = queryString.parse(this.props.location.search);
     battle([playerOneName, playerTwoName])
       .then((players) => {
         if ( players === null ) {
           return this.setState({
-            error: 'Looks like there was an error. Check that both users exist on Github.'
+            error: 'Looks like there was an error. Check that both users exist on Github.',
             loading: false
           })
         }
@@ -50,7 +54,7 @@ class Results extends React.Component {
     }
 
     return (
-      <div class="row">
+      <div className="row">
         <Player
           label="winner"
           score={winner.score}

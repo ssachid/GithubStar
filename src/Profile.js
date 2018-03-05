@@ -1,4 +1,6 @@
 import React from 'react';
+import PlayerPreview from './PlayerPreview';
+import PropTypes from 'prop-types';
 
 const Profile = (props) => {
   let info = props.info;
@@ -20,3 +22,5 @@ const Profile = (props) => {
 Profile.propTypes = {
   info: PropTypes.object.isRequired
 }
+
+export default Profile;

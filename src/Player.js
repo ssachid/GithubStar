@@ -1,7 +1,8 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import Profile from './profile';
+import Profile from './Profile';
 
-const Player = () => {
+const Player = (props) => {
   return (
     <div>
       <h1 className="header">{props.label}</h1>
@@ -16,3 +17,5 @@ Player.propTypes = {
   score: PropTypes.number.isRequired,
   profile: PropTypes.number.isRequired
 }
+
+export default Player;

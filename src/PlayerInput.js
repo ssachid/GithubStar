@@ -40,7 +40,6 @@ class PlayerInput extends React.Component {
 }
 
 PlayerInput.propTypes = {
-  id: PropTypes.integer.isRequired,
   label: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired
 }

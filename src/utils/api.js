@@ -7,17 +7,19 @@ export function fetchPopularRepos(language) {
     .then(({data}) => data.items)
 }
 
-export function getProfile(user) {
-  return axios.get(`http://api.github.com/users${username}${params}`)
+export function getProfile(username) {
+  return axios.get(`http://api.github.com/users/${username}`)
     .then(({data}) => data)
 }
 
 export function getRepos(username) {
   return axios.get(`https://api.github.com/users/${username}/repos`)
+    .then(({data}) => data)
 }
 
 function getStarCount(repos) {
-  return repos.data.reduce((count, {stargazers_count}) => count + startgazers_count, 0);
+  console.log(repos.reduce((count, repo) => count + repo.stargazers_count, 0))
+  return repos.reduce((count, repo) => count + repo.stargazers_count, 0);
 }
 
 function calculateScore({followers},repos) {

@@ -1,6 +1,8 @@
 import React from 'react';
 import SelectLanguage from './SelectLanguage';
 import {fetchPopularRepos} from './utils/api';
+import Loading from './Loading';
+import RepoGrid from './RepoGrid';
 
 class Popular extends React.Component {
   constructor(props) {

@@ -2,8 +2,10 @@ import React from 'react';
 import Popular from './Popular';
 import Battle from './Battle';
 import Results from './Results';
+import Nav from './Nav';
+import Home from './Home';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {
   render() {

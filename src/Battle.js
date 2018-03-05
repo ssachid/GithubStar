@@ -1,5 +1,7 @@
 import React from 'react';
 import PlayerInput from './PlayerInput';
+import PlayerPreview from './PlayerPreview';
+import { Link } from 'react-router-dom';
 
 class Battle extends React.Component {
   constructor(props) {
@@ -22,7 +24,7 @@ class Battle extends React.Component {
   }
 
   handleReset(id) {
-    this.setState(() => {
+    this.setState({
       [`${id}Name`]: '',
       [`${id}Image`]: null
     })
@@ -39,7 +41,7 @@ class Battle extends React.Component {
             <PlayerInput
               id="playerOne"
               label="Player One"
-              onSubmit={this.handleSubmit}
+              onSubmit={this.handleSubmit} />
           }
 
           {playerOneImage !== null &&
@@ -56,7 +58,7 @@ class Battle extends React.Component {
             <PlayerInput
               id="playerTwo"
               label="Player Two"
-              onSubmit={this.handleSubmit}
+              onSubmit={this.handleSubmit} />
           }
 
           {playerTwoImage !== null &&
@@ -68,7 +70,9 @@ class Battle extends React.Component {
               </button>
             </PlayerPreview>
           }
+        </div>
 
+        <div>
           {
             playerOneImage && playerTwoImage &&
             <Link
